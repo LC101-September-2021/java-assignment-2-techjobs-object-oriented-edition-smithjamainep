@@ -60,6 +60,17 @@ public class JobTest {
                 "\nPosition Type: Quality control" +
                 "\nCore Competency: Persistence" + '\n', job1.toString());
     }
+    @Test
+    public void  testToStringHandlesEmptyField() {
+        Job job1 = new Job("Web Developer", new Employer(""), new Location("StL"), new PositionType(""), new CoreCompetency("Java"));
+        assertEquals("\nID: " + job1.getId() +
+                "\nName: Web Developer" +
+                "\nEmployer: Data not available" +
+                "\nLocation: StL" +
+                "\nPosition Type: Data not available" +
+                "\nCore Competency: Java" + '\n', job1.toString());
+
+    }
 }
 
 
